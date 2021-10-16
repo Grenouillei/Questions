@@ -21,6 +21,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/home','App\Http\Controllers\HomeController@index')->middleware(['auth'])->name('home');
+
+Route::middleware('auth')->group(function (){
+    Route::get('/home','App\Http\Controllers\Pub\HomeController@index')->name('home');
+});
+
+
 
 require __DIR__.'/auth.php';

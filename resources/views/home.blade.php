@@ -6,7 +6,7 @@
             <div class="blue-block">
                 <h2>Hard</h2>
                 @foreach($categories as $category)
-                    {{$category->title}}<br>
+                    {{$category->title}}
                 @endforeach
             </div>
             <div class="red-block">

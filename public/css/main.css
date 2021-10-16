@@ -15,9 +15,11 @@ p{
     margin: 0;
 }
 aside{
-    position: absolute;
+    position: sticky;
+    float: left;
+    top: 0;
     height: 100%;
-    width: 4%;
+    width: 15%;
     background-color: rgba(33, 32, 32, 1);
 }
 .logo{
@@ -27,9 +29,10 @@ aside{
     height: 10%;
 }
 .content{
+    float: left;
     color: rgba(33, 32, 32, 1);
     height: 100%;
-    width: 100%;
+    width: 85%;
     background-color: #edf2f7;
 }
 .sidebar-info{

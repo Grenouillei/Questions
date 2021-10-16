@@ -43,9 +43,9 @@
 </aside>
 
 <script>
-    $('aside').on('click', function() {
-        $(this).animate({'width':'15%'},200);
-    });
+    // $('aside').on('click', function() {
+    //     $(this).animate({'width':'15%'},200);
+    // });
     // $('aside').on('mouseout', function() {
     //     $(this).animate({'width':'4%'},200);
     // });
