@@ -19,16 +19,21 @@
     </svg>
 
     <div class="sidebar-info">
-
+        {{auth()->user()->name}}
     </div>
 
     <div class="sidebar-menu">
-        <div class="menu">
-            <ul>
-                <li>Category 1</li>
-                <li>Category 2</li>
-            </ul>
-        </div>
+{{--        <div class="menu">--}}
+{{--            <ul>--}}
+{{--                <li>Category 1</li>--}}
+{{--                <li>Category 2</li>--}}
+{{--                <li>Category 3</li>--}}
+{{--                <li>Category 4</li>--}}
+{{--                <li>Category 5</li>--}}
+{{--                <li>Category 6</li>--}}
+{{--                <li>Category 7</li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
     </div>
 
     <div class="sidebar-network">
@@ -36,3 +41,12 @@
     </div>
 
 </aside>
+
+<script>
+    $('aside').on('click', function() {
+        $(this).animate({'width':'15%'},200);
+    });
+    // $('aside').on('mouseout', function() {
+    //     $(this).animate({'width':'4%'},200);
+    // });
+</script>
