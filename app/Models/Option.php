@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Option extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'alias',
+    ];
+
+    public function questions(){
+        return $this->belongsToMany(Question::class,'question_options');
+    }
 }
