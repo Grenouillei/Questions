@@ -23,7 +23,7 @@
          <p style="display: none">{{$i=0}}</p>
          @foreach($categories as $category)
              <p style="display: none">{{$i++}}</p>
-             <tr @if($i%2==0) class="bg-gray-200" @endif>
+             <tr @if($i%2!=0) class="bg-gray-200" @endif>
                  <td class="border px-4 py-2">{{$category->id}}</td>
                  <td class="border px-4 py-2">{{$category->title}}</td>
                  <td class="border px-4 py-2">{{$category->alias}}</td>

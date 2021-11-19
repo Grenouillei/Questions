@@ -27,8 +27,8 @@
                 <tr @if($i%2==0) class="bg-gray-200" @endif>
                     <td class="border px-4 py-2">{{$question->id}}</td>
                     <td class="border px-4 py-2">{{$question->title}}</td>
-                    <td class="border px-4 py-2">{{$question->category->title}}</td>
-                    <td class="border px-4 py-2">{{$question->level->title}}</td>
+                    <td class="border px-4 py-2">{{$question->category->title ?? '-'}}</td>
+                    <td class="border px-4 py-2">{{$question->level->title ?? '-'}}</td>
                     <td class="border px-4 py-2">
                         <a href="{{route('admin.questions.edit',$question->id)}}">
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -52,4 +52,7 @@
         <br>
         {{ $questions->links() }}
     </div>
+    <script>
+        localStorage.clear()
+    </script>
 @endsection

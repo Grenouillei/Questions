@@ -19,7 +19,7 @@ class OptionController extends Controller
     public function store(Request $request,Option $option){
         $option->fill($request->only($option->getFillable()));
         $option->save();
-        return redirect()->route('admin.options.index');
+        return redirect()->route('admin.questions.create')->with('option',$option->id);
     }
 
     public function edit(Option $option){
@@ -34,6 +34,6 @@ class OptionController extends Controller
 
     public function destroy(Option $option){
         $option->delete();
-        return redirect()->route('admin.options.index');
+        return redirect()->back();
     }
 }

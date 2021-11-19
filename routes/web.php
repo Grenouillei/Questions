@@ -32,6 +32,8 @@ Route::middleware('admin')->group(function (){
         Route::resource('levels','App\Http\Controllers\Admin\LevelController');
         Route::resource('options','App\Http\Controllers\Admin\OptionController');
         Route::resource('categories','App\Http\Controllers\Admin\CategoryController');
+
+        Route::get('question-options','App\Http\Controllers\Admin\QuestionController@getOptions')->name('question_options');
     });
 });
 

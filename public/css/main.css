@@ -57,4 +57,5 @@ aside li:hover{
 .menu li{
     margin-top: 3%;
     list-style-type: none;
+    font-size: 20px;
 }

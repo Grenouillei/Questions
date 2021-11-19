@@ -18,19 +18,19 @@ class QuestionController extends Controller
         ]);
     }
 
-    public function create(){
+    public function create(Question $question){
         return view('admin.questions.form')->with([
             'title'=>'Question',
             'categories'=>Category::all(),
             'levels'=>Level::all(),
-            'options'=>Option::all(),
+            'options'=>$question->options,
         ]);
     }
 
     public function store(Request $request,Question $question){
         $question->fill($request->only($question->getFillable()));
         $question->save();
-        $question->options()->attach($request->options);
+        $question->options()->sync(explode(',',$request->options[0]));
         return redirect()->route('admin.questions.index');
     }
 
@@ -40,19 +40,30 @@ class QuestionController extends Controller
             'question'=>$question,
             'categories'=>Category::all(),
             'levels'=>Level::all(),
-            'options'=>Option::all(),
-            ]);
+            'options'=>$question->options,
+        ]);
     }
 
     public function update(Request $request,Question $question){
         $question->fill($request->only($question->getFillable()));
         $question->save();
-        $question->options()->attach($request->options);
+        $question->options()->sync($request->options);
         return redirect()->route('admin.questions.index');
     }
 
     public function destroy(Question $question){
         $question->delete();
         return redirect()->route('admin.questions.index');
+    }
+
+    public function getOptions(Request $request){
+        $options = Option::whereIn('id',$request->options)->get();
+            $view = view('admin.questions.table')->with([
+                'options'=>$options,
+            ]);
+        return response()->json($view->render());
+    }
+    public function storeOptions(){
+
     }
 }

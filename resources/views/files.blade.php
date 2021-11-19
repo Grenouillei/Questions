@@ -7,4 +7,5 @@
 <link rel="stylesheet" href="{{ asset("css/main.css") }}">
 <link rel="stylesheet" href="{{ asset("css/home.css") }}">
 <link rel="stylesheet" href="{{ asset("css/admin.css") }}">
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+{{--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>--}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

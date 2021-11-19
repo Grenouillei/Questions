@@ -23,7 +23,7 @@
             <p style="display: none">{{$i=0}}</p>
             @foreach($options as $option)
                 <p style="display: none">{{$i++}}</p>
-                <tr @if($i%2==0) class="bg-gray-200" @endif>
+                <tr @if($i%2!=0) class="bg-gray-200" @endif>
                     <td class="border px-4 py-2">{{$option->id}}</td>
                     <td class="border px-4 py-2">{{$option->title}}</td>
                     <td class="border px-4 py-2">{{$option->alias}}</td>
